@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+
+<div id="content">
+    <div th:each="book : ${books}" class="book">
+        <div th:text="${book.title}"></div>
+        <div th:text="${book.author}"></div>
+        <div th:text="'Cena: ' + ${book.price}"></div>
+        <div th:text="'ISBN: ' + ${book.isbn}"></div>
+    </div>
+</div>
+</body>
+</html>
